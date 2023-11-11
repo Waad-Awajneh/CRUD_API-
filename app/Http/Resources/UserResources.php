@@ -18,7 +18,8 @@ class UserResources extends JsonResource
             'user_id' => $this->id,
             'user_name' => $this->name,
             'email' => $this->email,
- 
+            "posts" => $this->posts->count(),
+            "comments" => $this->comments->count(),
         ];
     }
 }

@@ -8,16 +8,10 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         User::factory()
             ->count(10)
-            // ->hasPosts(1)
             ->create();
     }
 }
