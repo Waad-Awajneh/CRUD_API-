@@ -11,34 +11,13 @@ use App\Http\Resources\PostResources;
 class PostController extends Controller
 {
     use HttpResponses;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index($user_id)
     {
-
-
         return PostResources::collection(Post::where('user_id', $user_id)->get()->all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -54,35 +33,9 @@ class PostController extends Controller
         return $this->success('', 'post created successfully', 201);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Post $post)
     {
         if (!$this->isAuthorize($post)) {
@@ -100,16 +53,9 @@ class PostController extends Controller
         return $this->success('', 'post updated successfully', 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function destroy(Post $post)
     {
-
-
 
         if (!$this->isAuthorize($post)) {
             return $this->error('', 'you are not authorize to delete this post', 403);

@@ -36,10 +36,6 @@ class CommentController extends Controller
         return $this->success('', 'comment created successfully', 201);
     }
 
-
-
-
-
     public function update(Request $request, Comment $comment)
     {
 

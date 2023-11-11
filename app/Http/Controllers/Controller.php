@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Traits\HttpResponses;
+use App\Models\Post;
 use App\Models\User;
+use App\Http\Traits\HttpResponses;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -36,5 +37,7 @@ class Controller extends BaseController
             'get data successfully',
             200
         );
-    }
+    } 
+    
+
 }

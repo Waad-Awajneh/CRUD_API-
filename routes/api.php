@@ -34,6 +34,7 @@ Route::get('/usersWithPostsAndComments', [Controller::class, 'usersWithPostsAndC
 
 
 
+
 // ------------------- authenticated endPoints ----------------------
 
 //users endpoint
