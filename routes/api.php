@@ -68,3 +68,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/post/{post}', [PostController::class, 'destroy']);
     
 });
+
+//test
